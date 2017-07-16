@@ -24,6 +24,7 @@ class ShopperHomePageViewController: UIViewController {
     @IBOutlet var question1Stars: [UIButton]!
     
     @IBAction func question1StarAction(_ sender: UIButton) {
+        question1Stars = sender.tag
     }
     
     @IBOutlet weak var question2: UILabel!
@@ -32,6 +33,7 @@ class ShopperHomePageViewController: UIViewController {
     @IBOutlet var question2Stars: [UIButton]!
     
     @IBAction func question2StarAction(_ sender: UIButton) {
+        question2Stars = sender.tag
     }
     
     @IBOutlet weak var question3: UILabel!
@@ -40,6 +42,7 @@ class ShopperHomePageViewController: UIViewController {
     @IBOutlet var question3Stars: [UIButton]!
     
     @IBAction func question3StarAction(_ sender: UIButton) {
+        question3Stars = sender.tag
     }
     
     @IBOutlet weak var question4: UILabel!
@@ -48,6 +51,7 @@ class ShopperHomePageViewController: UIViewController {
     @IBOutlet var question4Stars: [UIButton]!
     
     @IBAction func question4StarAction(_ sender: UIButton) {
+        question4Stars = sender.tag
     }
     
     @IBOutlet weak var question5: UILabel!
@@ -56,10 +60,12 @@ class ShopperHomePageViewController: UIViewController {
     @IBOutlet var question5Stars: [UIButton]!
     
     @IBAction func question5StarAction(_ sender: UIButton) {
+        question5Stars = sender.tag
     }
     
     @IBAction func Submit(_ sender: UIButton) {
         // send to api and clear data!!
+        // have a pop up to thank the user!!
     }
     
     @IBAction func logOut(_ sender: UIButton) {
@@ -108,4 +114,25 @@ class ShopperHomePageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+// MARK: - Text Field Extension
+
+extension ShopperHomePageViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.activeTextField = textField
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        self.activeTextField = textField
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.activeTextField = textField
+        textField.resignFirstResponder()
+        return true
+    }
 }
