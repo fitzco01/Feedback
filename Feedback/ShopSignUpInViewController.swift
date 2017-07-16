@@ -21,7 +21,7 @@ class ShopSignUpInViewController: UIViewController {
     @IBAction func SignIn(_ sender: UIButton) {
         isACompany = switchSignInAlpha()
         if isACompany {
-            // navigate to the next screen!!
+            self.performSegue(withIdentifier: "companySignInUp", sender: indexPath);
         } else {
             popup(title: "Sorry!", message: "Some of the information you entered is incorrect.  Please try again.")
         }

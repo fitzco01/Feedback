@@ -635,10 +635,10 @@
             </objects>
             <point key="canvasLocation" x="568.79999999999995" y="-522.18890554722645"/>
         </scene>
-        <!--View Controller-->
+        <!--Shopper Home Page View Controller-->
         <scene sceneID="rEw-Gj-S1h">
             <objects>
-                <viewController id="wUl-iz-kfZ" sceneMemberID="viewController">
+                <viewController id="wUl-iz-kfZ" customClass="ShopperHomePageViewController" customModule="Feedback" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RCg-RI-dXv"/>
                         <viewControllerLayoutGuide type="bottom" id="qng-IQ-ymm"/>
@@ -646,12 +646,400 @@
                     <view key="view" contentMode="scaleToFill" id="cWK-re-eBR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAY-yU-UYa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tKd-uS-IvS">
+                                        <rect key="frame" x="8" y="8" width="359" height="651"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1y-mf-zZE">
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="0.0"/>
+                                                <state key="normal" title="Start"/>
+                                                <connections>
+                                                    <action selector="startTimer:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="jgF-Xr-Rpo"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLJ-W8-NGv">
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5vw-gC-0rS">
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GaH-kO-6W9">
+                                                <rect key="frame" x="0.0" y="128" width="359" height="78"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2Z-fo-nnx">
+                                                        <rect key="frame" x="288" y="8" width="63" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question1StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="DPm-GC-m1B"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtF-Ty-O6V">
+                                                        <rect key="frame" x="148" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question1StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="ST6-xJ-0jP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBA-o8-lsj">
+                                                        <rect key="frame" x="78" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question1StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="vDo-9W-9A8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agr-7X-1wx">
+                                                        <rect key="frame" x="8" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question1StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="WM0-oL-ubr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge9-Ot-u9a">
+                                                        <rect key="frame" x="218" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question1StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="TFC-Y6-Jjc"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th3-8W-DOK">
+                                                <rect key="frame" x="0.0" y="206" width="359" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-vb-kEO">
+                                                <rect key="frame" x="0.0" y="206" width="359" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLB-94-UFc">
+                                                <rect key="frame" x="0.0" y="334" width="359" height="78"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5va-yA-8L9">
+                                                        <rect key="frame" x="288" y="8" width="63" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question2StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="BD5-UZ-Fgg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKY-u3-mTk">
+                                                        <rect key="frame" x="218" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question2StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="PLW-oO-sw0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjw-VY-WqE">
+                                                        <rect key="frame" x="148" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question2StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="dHc-WP-tYK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dme-VV-WVB">
+                                                        <rect key="frame" x="78" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question2StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="sOq-TB-6Tt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as7-El-JTN">
+                                                        <rect key="frame" x="8" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question2StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="nmE-vK-IMF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEv-lw-522">
+                                                <rect key="frame" x="0.0" y="412" width="359" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="i85-hY-NLE">
+                                                <rect key="frame" x="0.0" y="412" width="359" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jdM-Us-6Bx">
+                                                <rect key="frame" x="0.0" y="540" width="359" height="78"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8B-7c-1Jm">
+                                                        <rect key="frame" x="8" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question3StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="jyI-FV-SSV"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW5-1W-sbl">
+                                                        <rect key="frame" x="288" y="8" width="63" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question3StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="KvY-cY-QHE"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTR-XT-Az1">
+                                                        <rect key="frame" x="218" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question3StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="C4F-rL-iaY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2J-FI-wzi">
+                                                        <rect key="frame" x="148" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question3StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="I8f-YW-eTu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ele-nm-6WI">
+                                                        <rect key="frame" x="78" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question3StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="fcr-h0-lON"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slo-nG-Fhg">
+                                                <rect key="frame" x="0.0" y="618" width="359" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qmw-pN-cPZ">
+                                                <rect key="frame" x="0.0" y="618" width="359" height="33"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lRy-5A-Kp1">
+                                                <rect key="frame" x="0.0" y="651" width="359" height="0.0"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwT-bq-THx">
+                                                        <rect key="frame" x="8" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question4StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="OI7-mj-v97"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WW3-sy-vbe">
+                                                        <rect key="frame" x="288" y="8" width="63" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question4StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="OOa-Ov-Vkx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7P6-OQ-qeO">
+                                                        <rect key="frame" x="218" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question4StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="khH-Lg-EGx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yR2-24-m8W">
+                                                        <rect key="frame" x="148" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question4StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="AJB-Zq-o5W"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UM-V1-Id9">
+                                                        <rect key="frame" x="78" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question4StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="hD2-d2-W9T"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8t-ue-cSK">
+                                                <rect key="frame" x="0.0" y="651" width="359" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sTA-2k-qyD">
+                                                <rect key="frame" x="0.0" y="651" width="359" height="0.0"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uwd-Fp-36T">
+                                                <rect key="frame" x="0.0" y="651" width="359" height="0.0"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbK-xR-dVi">
+                                                        <rect key="frame" x="8" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question5StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="BYu-YT-wd7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxJ-zj-Ve4">
+                                                        <rect key="frame" x="288" y="8" width="63" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question5StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="SId-3U-2AU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atv-SD-F6t">
+                                                        <rect key="frame" x="218" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question5StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="etq-mb-Dvi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ue1-4l-lH3">
+                                                        <rect key="frame" x="148" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question5StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="Dtr-2Z-ZeA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptb-Gj-CUq">
+                                                        <rect key="frame" x="78" y="8" width="62" height="62"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="blank_star"/>
+                                                        <connections>
+                                                            <action selector="question5StarAction:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="tjA-hw-b8b"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a44-YN-wW0">
+                                                <rect key="frame" x="0.0" y="651" width="359" height="0.0"/>
+                                                <color key="backgroundColor" red="0.039215686270000001" green="0.30980392159999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Submit">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Submit:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="oZf-4r-EEi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znn-LG-mSP">
+                                                <rect key="frame" x="0.0" y="651" width="359" height="0.0"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Log Out">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logOut:" destination="wUl-iz-kfZ" eventType="touchUpInside" id="A4S-vL-fgs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tKd-uS-IvS" firstAttribute="centerY" secondItem="RAY-yU-UYa" secondAttribute="centerY" id="7Bj-Uz-4zQ"/>
+                                    <constraint firstItem="tKd-uS-IvS" firstAttribute="top" secondItem="RAY-yU-UYa" secondAttribute="topMargin" id="7SI-t1-xoZ"/>
+                                    <constraint firstItem="tKd-uS-IvS" firstAttribute="leading" secondItem="RAY-yU-UYa" secondAttribute="leadingMargin" id="Uyo-OM-r97"/>
+                                    <constraint firstItem="tKd-uS-IvS" firstAttribute="centerX" secondItem="RAY-yU-UYa" secondAttribute="centerX" id="awc-Ti-YtI"/>
+                                    <constraint firstItem="tKd-uS-IvS" firstAttribute="bottom" secondItem="RAY-yU-UYa" secondAttribute="bottomMargin" id="gKh-Vl-i30"/>
+                                    <constraint firstItem="tKd-uS-IvS" firstAttribute="trailing" secondItem="RAY-yU-UYa" secondAttribute="trailingMargin" id="wyl-Sc-mYe"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RAY-yU-UYa" secondAttribute="trailing" id="HYt-G0-rWN"/>
+                            <constraint firstItem="RAY-yU-UYa" firstAttribute="top" secondItem="cWK-re-eBR" secondAttribute="top" id="WLi-5x-2CK"/>
+                            <constraint firstItem="RAY-yU-UYa" firstAttribute="bottom" secondItem="qng-IQ-ymm" secondAttribute="top" id="y9I-uG-d99"/>
+                            <constraint firstItem="RAY-yU-UYa" firstAttribute="leading" secondItem="cWK-re-eBR" secondAttribute="leading" id="ztY-0s-kvj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="question1" destination="CLJ-W8-NGv" id="t5A-fs-fMd"/>
+                        <outlet property="question1Answer" destination="5vw-gC-0rS" id="yR6-Kn-4Yl"/>
+                        <outlet property="question1StarView" destination="GaH-kO-6W9" id="bFE-az-cUI"/>
+                        <outlet property="question2" destination="Th3-8W-DOK" id="YdW-4f-p0q"/>
+                        <outlet property="question2Answer" destination="WVG-vb-kEO" id="vZS-mo-m4M"/>
+                        <outlet property="question2StarView" destination="vLB-94-UFc" id="tct-p0-EGH"/>
+                        <outlet property="question3" destination="rEv-lw-522" id="Aao-IU-H6u"/>
+                        <outlet property="question3Answer" destination="i85-hY-NLE" id="ryQ-7G-KFm"/>
+                        <outlet property="question3StarView" destination="jdM-Us-6Bx" id="b2P-U9-4or"/>
+                        <outlet property="question4" destination="Slo-nG-Fhg" id="zpB-Yt-qhL"/>
+                        <outlet property="question4Answer" destination="Qmw-pN-cPZ" id="Arf-qe-5BO"/>
+                        <outlet property="question4StarView" destination="lRy-5A-Kp1" id="dZY-wR-Hi6"/>
+                        <outlet property="question5" destination="o8t-ue-cSK" id="HVt-Ap-xVN"/>
+                        <outlet property="question5Answer" destination="sTA-2k-qyD" id="T8s-9M-l1P"/>
+                        <outlet property="question5StarView" destination="uwd-Fp-36T" id="FxS-O7-miA"/>
+                        <outlet property="scrollView" destination="RAY-yU-UYa" id="vzD-hQ-Caf"/>
+                        <outlet property="stackView" destination="tKd-uS-IvS" id="7RM-BX-J5j"/>
+                        <outletCollection property="question1Stars" destination="agr-7X-1wx" collectionClass="NSMutableArray" id="NZb-ZF-asZ"/>
+                        <outletCollection property="question1Stars" destination="yBA-o8-lsj" collectionClass="NSMutableArray" id="I7N-jl-TL6"/>
+                        <outletCollection property="question1Stars" destination="dtF-Ty-O6V" collectionClass="NSMutableArray" id="ieP-yB-aHL"/>
+                        <outletCollection property="question1Stars" destination="ge9-Ot-u9a" collectionClass="NSMutableArray" id="IB5-hh-6eS"/>
+                        <outletCollection property="question1Stars" destination="V2Z-fo-nnx" collectionClass="NSMutableArray" id="yea-uP-yEN"/>
+                        <outletCollection property="question2Stars" destination="as7-El-JTN" collectionClass="NSMutableArray" id="WjS-7j-ZbW"/>
+                        <outletCollection property="question2Stars" destination="5va-yA-8L9" collectionClass="NSMutableArray" id="I6Y-dH-ONg"/>
+                        <outletCollection property="question2Stars" destination="CKY-u3-mTk" collectionClass="NSMutableArray" id="eDc-m9-98Q"/>
+                        <outletCollection property="question2Stars" destination="Wjw-VY-WqE" collectionClass="NSMutableArray" id="UcF-bp-bip"/>
+                        <outletCollection property="question2Stars" destination="Dme-VV-WVB" collectionClass="NSMutableArray" id="awp-2x-Mo3"/>
+                        <outletCollection property="question3Stars" destination="M8B-7c-1Jm" collectionClass="NSMutableArray" id="Yrb-vx-HFy"/>
+                        <outletCollection property="question3Stars" destination="ele-nm-6WI" collectionClass="NSMutableArray" id="nGn-4Y-Xvz"/>
+                        <outletCollection property="question3Stars" destination="b2J-FI-wzi" collectionClass="NSMutableArray" id="S5n-RV-Rw5"/>
+                        <outletCollection property="question3Stars" destination="RTR-XT-Az1" collectionClass="NSMutableArray" id="vaZ-OO-HOB"/>
+                        <outletCollection property="question3Stars" destination="xW5-1W-sbl" collectionClass="NSMutableArray" id="i76-f8-xsL"/>
+                        <outletCollection property="question4Stars" destination="mwT-bq-THx" collectionClass="NSMutableArray" id="den-Rz-mRH"/>
+                        <outletCollection property="question4Stars" destination="8UM-V1-Id9" collectionClass="NSMutableArray" id="mNu-ZG-3f6"/>
+                        <outletCollection property="question4Stars" destination="yR2-24-m8W" collectionClass="NSMutableArray" id="i7a-22-STh"/>
+                        <outletCollection property="question4Stars" destination="7P6-OQ-qeO" collectionClass="NSMutableArray" id="DSi-pX-3Ij"/>
+                        <outletCollection property="question4Stars" destination="WW3-sy-vbe" collectionClass="NSMutableArray" id="Oth-sv-xqs"/>
+                        <outletCollection property="question5Stars" destination="MbK-xR-dVi" collectionClass="NSMutableArray" id="jfE-kR-8ld"/>
+                        <outletCollection property="question5Stars" destination="Ptb-Gj-CUq" collectionClass="NSMutableArray" id="8LX-qc-J6d"/>
+                        <outletCollection property="question5Stars" destination="ue1-4l-lH3" collectionClass="NSMutableArray" id="qTS-uO-7E2"/>
+                        <outletCollection property="question5Stars" destination="Atv-SD-F6t" collectionClass="NSMutableArray" id="D1W-r7-Wwm"/>
+                        <outletCollection property="question5Stars" destination="gxJ-zj-Ve4" collectionClass="NSMutableArray" id="IP8-R6-T5T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5y-zx-MZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461.5999999999999" y="-522.18890554722645"/>
+            <point key="canvasLocation" x="1351.2" y="-504.19790104947532"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CBV-4l-dKW">

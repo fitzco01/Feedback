@@ -19,7 +19,7 @@ class ShopperSignInViewController: UIViewController {
     
     @IBAction func signIn(_ sender: UIButton) {
         if isAnActivationCode {
-            // navigate!!
+            self.performSegue(withIdentifier: "shopperSignIn", sender: indexPath);
         } else {
             popup(title: "Sorry!", message: "It looks like the Activation Code or Company Name you entered does not exist.  Please try again.")
         }

@@ -307,5 +307,7 @@ class JsonParser {
                 }
             }
         })  .resume()
+        
+        // add popup alerts for connection failed!!
     }
 }
