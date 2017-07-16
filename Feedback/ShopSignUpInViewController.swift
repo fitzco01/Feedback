@@ -75,17 +75,11 @@ class ShopSignUpInViewController: UIViewController {
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
-            print("OK")
         }
         
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
-}
-
-// MARK: - Text Field Extension
-
-extension ShopSignUpInViewController: UITextFieldDelegate {
     
     func checkIfEmpty() {
         var bool = false
@@ -125,6 +119,11 @@ extension ShopSignUpInViewController: UITextFieldDelegate {
         
         return self.canSignUp
     }
+}
+
+// MARK: - Text Field Extension
+
+extension ShopSignUpInViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         self.activeTextField = textField

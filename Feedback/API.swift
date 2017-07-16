@@ -43,6 +43,39 @@ class JsonParser {
             completion(isACompany)
         }
     }
+    
+    func getMyReviews(shopID: Int, _ completion: @escaping ([ReviewFinder]) -> ()) {
+        let postString = "shopID=\(shopID)"
+        post(clientURLRequest("reviewForShop.php"), message: postString) { (success, object) in
+            var reviews: [ReviewFinder] = []
+            if let object = object as? Dictionary<String, AnyObject> {
+                if let results = object["review"] as? [Dictionary<String, AnyObject>] {
+                    for result in results {
+                        if let review = ReviewFinder(json: result) {
+                            reviews.append(review)
+                        } else {
+                            print(result)
+                        }
+                    }
+                }
+            }
+            completion(reviews)
+        }
+    }
+    
+    func getMyStars(shopID: Int, _ completion: @escaping ([ReviewFinder]) -> ()) {
+        let postString = "shopID=\(shopID)"
+        post(clientURLRequest("starsForShop.php"), message: postString) { (success, object) in
+            var stars: [Int] = []
+            if let object = object as? Dictionary<String, AnyObject> {
+                if let results = object["stars"] as? [Dictionary<String, AnyObject>] {
+                    stars[0] = results[0]
+                    stars[1] = results[1]
+                }
+            }
+            completion(stars)
+        }
+    }
     /////
     
     func getTeams(_ completion: @escaping ([TeamFinder]) -> ()) {
