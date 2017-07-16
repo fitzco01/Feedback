@@ -33,6 +33,10 @@ class ShopSettingsViewController: UIViewController {
         }
     }
     
+    @IBAction func addShopper(_ sender: UIButton) {
+        // send email with activation code and link to app!!
+    }
+    
     // MARK: - Overrides
 
     override func viewDidLoad() {
