@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Shop Settings View Controller-->
         <scene sceneID="SzW-DW-D0h">
             <objects>
-                <viewController id="7w9-x5-Rni" sceneMemberID="viewController">
+                <viewController id="7w9-x5-Rni" customClass="ShopSettingsViewController" customModule="Feedback" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Ln-fO-lnM"/>
                         <viewControllerLayoutGuide type="bottom" id="ikY-JR-ca5"/>
@@ -29,6 +29,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7w9-x5-Rni" id="MzR-nG-IVM"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rbb-fb-cuo">
                                 <rect key="frame" x="16" y="102" width="343" height="30"/>
@@ -36,6 +39,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7w9-x5-Rni" id="UT4-NP-moJ"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question 4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOJ-2X-b28">
                                 <rect key="frame" x="16" y="250" width="343" height="30"/>
@@ -43,6 +49,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7w9-x5-Rni" id="oMS-Cc-5hd"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1C-nJ-bQx">
                                 <rect key="frame" x="16" y="398" width="286" height="31"/>
@@ -75,6 +84,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7w9-x5-Rni" id="Rsi-gf-9BK"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="M9m-ko-UuG">
                                 <rect key="frame" x="16" y="214" width="343" height="29"/>
@@ -100,6 +112,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7w9-x5-Rni" id="gnt-AU-qGU"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sEm-9n-UFL">
                                 <rect key="frame" x="16" y="362" width="343" height="29"/>
@@ -118,6 +133,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="save:" destination="7w9-x5-Rni" eventType="touchUpInside" id="OwU-Gc-70H"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Btg-fG-kno">
                                 <rect key="frame" x="310" y="398" width="51" height="31"/>
@@ -153,6 +171,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7w9-x5-Rni" id="wwy-Rw-nKe"/>
+                                    <outlet property="delegate" destination="7w9-x5-Rni" id="qqZ-eA-3mK"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Shoppers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUw-cT-6td">
                                 <rect key="frame" x="16" y="480" width="343" height="21"/>
@@ -174,6 +196,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="question1" destination="Noi-19-hAO" id="2w5-je-YQx"/>
+                        <outlet property="question2" destination="rbb-fb-cuo" id="Fgx-j8-Aua"/>
+                        <outlet property="question3" destination="bhi-EB-Lre" id="LDf-4x-Yq3"/>
+                        <outlet property="question4" destination="LOJ-2X-b28" id="Bo5-FM-BA0"/>
+                        <outlet property="question5" destination="bSs-6p-gBn" id="6lL-vJ-hKs"/>
+                        <outlet property="shoppersTable" destination="FfB-1D-V0c" id="ohX-AP-n3S"/>
+                        <outlet property="star1" destination="exY-Og-eZV" id="HMP-pI-mdI"/>
+                        <outlet property="star2" destination="Ent-ES-Hrh" id="pQH-No-FBR"/>
+                        <outlet property="star3" destination="M9m-ko-UuG" id="Fs7-Q0-CCe"/>
+                        <outlet property="star4" destination="ykH-7C-N2P" id="FkZ-25-APU"/>
+                        <outlet property="star5" destination="sEm-9n-UFL" id="W6u-9W-9S4"/>
+                        <outlet property="timer" destination="Btg-fG-kno" id="f1d-Pj-lbc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1c-XE-gDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,6 +310,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aqP-WR-hF0" id="UCh-2N-fbQ"/>
+                                    <outlet property="delegate" destination="aqP-WR-hF0" id="Hse-uU-KQM"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3It-6Z-d8V">
                                 <rect key="frame" x="70" y="20" width="241" height="40"/>
