@@ -31,6 +31,25 @@ class JsonParser {
         }
     }
     
+    func getMyQuestions(shopID: Int, _ completion: @escaping (QuestionFinder) -> ()) {
+        let postString = "shopID=\(shopID)"
+        post(clientURLRequest("questionsForCustomer.php"), message: postString) { (success, object) in
+            var questions: [QuestionFinder] = []
+            if let object = object as? Dictionary<String, AnyObject> {
+                if let results = object["question"] as? [Dictionary<String, AnyObject>] {
+                    for result in results {
+                        if let question = QuestionFinder(json: result) {
+                            questions.append(question)
+                        } else {
+                            print(result)
+                        }
+                    }
+                }
+            }
+            completion(questions[0])
+        }
+    }
+    
     func isACompany(shopName: String, email: String, hashedPassword: String, _ completion: @escaping (Bool) -> ()) {
         let postString = "shopName=\(shopName)&email=\(email)&password=\(hashedPassword)"
         post(clientURLRequest("isACompany.php"), message: postString) { (success, object) in
@@ -282,13 +301,15 @@ class JsonParser {
         return request
     }
     
-    fileprivate func dataTask(_ request: NSMutableURLRequest, method: String, message: String?, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
+    fileprivate func dataTask(_ request: NSMutableURLRequest, method: String, message: String?, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> (Int)) {
         request.httpMethod = method
         request.httpBody = message?.data(using: String.Encoding.utf8)
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
         session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            
+            let code = 0
             if let data = data {
                 
                 // MARK: - For debugging purposes
@@ -298,16 +319,18 @@ class JsonParser {
                 let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
                     completion(true, json as AnyObject?)
+                    code = response.statusCode
                 } else {
                     completion(false, json as AnyObject?)
-                    print("ERROR: CONNECTION FAILED")
                     if let httpResponse = response as? HTTPURLResponse {
                         print("error \(httpResponse.statusCode)")
+                        code = httpResponse.statusCode
                     }
                 }
+                
             }
         })  .resume()
         
-        // add popup alerts for connection failed!!
+        return code
     }
 }

@@ -1025,6 +1025,7 @@
                         <outlet property="question5StarView" destination="uwd-Fp-36T" id="FxS-O7-miA"/>
                         <outlet property="scrollView" destination="RAY-yU-UYa" id="vzD-hQ-Caf"/>
                         <outlet property="stackView" destination="tKd-uS-IvS" id="7RM-BX-J5j"/>
+                        <outlet property="timer" destination="b1y-mf-zZE" id="UOt-q7-QZT"/>
                         <outletCollection property="question1Stars" destination="agr-7X-1wx" collectionClass="NSMutableArray" id="NZb-ZF-asZ"/>
                         <outletCollection property="question1Stars" destination="yBA-o8-lsj" collectionClass="NSMutableArray" id="I7N-jl-TL6"/>
                         <outletCollection property="question1Stars" destination="dtF-Ty-O6V" collectionClass="NSMutableArray" id="ieP-yB-aHL"/>
