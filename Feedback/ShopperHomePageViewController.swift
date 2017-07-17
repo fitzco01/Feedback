@@ -130,7 +130,6 @@ class ShopperHomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // get the information for how to fill out the screen dynamically!!
         JsonParser.jsonClient.getMyQuestions(shopID: shopID) {[weak self](myQuestions) in
             self?.isATimer = myQuestions.timer
             self?.question1Var = myQuestions.question1

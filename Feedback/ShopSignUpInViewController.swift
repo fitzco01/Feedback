@@ -30,8 +30,19 @@ class ShopSignUpInViewController: UIViewController {
     @IBAction func SignUp(_ sender: UIButton) {
         canSignUp = switchSignUpAlpha()
         if canSignUp {
-            // sign up API call!!
-            // navigate to the next screen!!
+
+            let defaults = UserDefaults.standard
+            let myHash = Hash().hash(string: password.text)
+            
+            JsonParser.jsonClient.shopSignUp(shopName: companyName.text, email: email.text, password: myHash) {[weak self](myShop) in
+                
+                defaults.set(myShop.shop_id, forKey: "shop_id")
+                defaults.set(myShop.name, forKey: "shopName")
+                defaults.set(myShop.email, forKey: "shopEmail")
+                defaults.set(myShop.password, forKey: "shopPassword")
+            }
+            
+            self.performSegue(withIdentifier: "companySignInUp", sender: sender)
         } else {
             popup(title: "Sorry!", message: "Please be sure to fill out all of the fields.  Emails must be valid, and passwords must be at least 6 characters.")
         }
@@ -55,20 +66,15 @@ class ShopSignUpInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "companySignInUp" {
-            let destinationNavigationController = segue.destination as! UINavigationController
-            let shpvc = destinationNavigationController.topViewController as! ShopHomePageViewController
-            
-            shpvc.companyName = companyName.text
-        }
     }
+    */
 
     func popup(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -100,8 +106,8 @@ class ShopSignUpInViewController: UIViewController {
     }
     
     func switchSignInAlpha() -> Bool {
-        hash = Hash().hash(string: password.text)
-        JsonParser.jsonClient.isACompany(name: companyName.text, email: email.text, password: hash) {[weak self](isACompany) in
+        let myHash = Hash().hash(string: password.text)
+        JsonParser.jsonClient.isACompany(name: companyName.text, email: email.text, password: myHash) {[weak self](isACompany) in
             self?.isACompany = isACompany
         }
         

@@ -28,7 +28,6 @@ class ShopperSignInViewController: UIViewController {
     // MARK: - Variables
     
     var isAnActivationCode: Bool = false
-    var companyId: Int = 0 // this needs to be set!!
     
     // MARK: - Overrides
 
@@ -43,20 +42,15 @@ class ShopperSignInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "shopperSignIn" {
-            let destinationNavigationController = segue.destination as! UINavigationController
-            let shpvc = destinationNavigationController.topViewController as! ShopperHomePageViewController
-            
-            shpvc.companyID = companyID
-        }
     }
+    */
     
     func popup(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)

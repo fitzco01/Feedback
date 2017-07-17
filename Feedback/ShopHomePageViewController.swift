@@ -33,13 +33,15 @@ class ShopHomePageViewController: UIViewController {
     
     var myStars: [Int] = []
     var reviews: [ReviewFinder] = []
-    var shopID: Int = 0 // need to set this!!
     
     // MARK: - Overrides
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let defaults = UserDefaults.standard
+        let shopID = defaults.object(forKey: "shop_id") as? Int
+        
         JsonParser.jsonClient.getMyStars(shopID: shopID) {[weak self](mystars) in
             self?.myStars = mystars
             

@@ -10,6 +10,8 @@
 		313ED78A4A4C22C52989A7D1 /* Pods_FeedbackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8B7225BA9B5926187AE7A7 /* Pods_FeedbackTests.framework */; };
 		67FDA0480408E8334DF1956C /* Pods_Feedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E2139523C8340EB711B7DB /* Pods_Feedback.framework */; };
 		A639BFF01F1C345500AC299F /* QuestionFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639BFEF1F1C345500AC299F /* QuestionFinder.swift */; };
+		A639BFF21F1C4F9D00AC299F /* ShoppersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639BFF11F1C4F9D00AC299F /* ShoppersTableViewCell.swift */; };
+		A639BFF61F1C532700AC299F /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639BFF51F1C532700AC299F /* ReviewsTableViewCell.swift */; };
 		A68786651F1AD211009A5EAA /* ShopperSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68786641F1AD211009A5EAA /* ShopperSignInViewController.swift */; };
 		A68786671F1AD231009A5EAA /* ShopSignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68786661F1AD231009A5EAA /* ShopSignUpInViewController.swift */; };
 		A68786691F1AD24F009A5EAA /* ShopperHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68786681F1AD24F009A5EAA /* ShopperHomePageViewController.swift */; };
@@ -54,6 +56,8 @@
 		76ECFBAD0458804C852F0FE0 /* Pods-FeedbackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeedbackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FeedbackTests/Pods-FeedbackTests.release.xcconfig"; sourceTree = "<group>"; };
 		933D0E0EB6DBDA3CEC4495CE /* Pods-Feedback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feedback.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feedback/Pods-Feedback.release.xcconfig"; sourceTree = "<group>"; };
 		A639BFEF1F1C345500AC299F /* QuestionFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionFinder.swift; sourceTree = "<group>"; };
+		A639BFF11F1C4F9D00AC299F /* ShoppersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppersTableViewCell.swift; sourceTree = "<group>"; };
+		A639BFF51F1C532700AC299F /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
 		A68786641F1AD211009A5EAA /* ShopperSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopperSignInViewController.swift; sourceTree = "<group>"; };
 		A68786661F1AD231009A5EAA /* ShopSignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSignUpInViewController.swift; sourceTree = "<group>"; };
 		A68786681F1AD24F009A5EAA /* ShopperHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopperHomePageViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +145,9 @@
 			children = (
 				A68786661F1AD231009A5EAA /* ShopSignUpInViewController.swift */,
 				A687866A1F1AD25A009A5EAA /* ShopHomePageViewController.swift */,
+				A639BFF51F1C532700AC299F /* ReviewsTableViewCell.swift */,
 				A687866C1F1AD265009A5EAA /* ShopSettingsViewController.swift */,
+				A639BFF11F1C4F9D00AC299F /* ShoppersTableViewCell.swift */,
 				A68786721F1AF780009A5EAA /* ShopFinder.swift */,
 			);
 			name = Shop;
@@ -505,6 +511,7 @@
 				A687866B1F1AD25A009A5EAA /* ShopHomePageViewController.swift in Sources */,
 				A687866D1F1AD265009A5EAA /* ShopSettingsViewController.swift in Sources */,
 				A68786651F1AD211009A5EAA /* ShopperSignInViewController.swift in Sources */,
+				A639BFF21F1C4F9D00AC299F /* ShoppersTableViewCell.swift in Sources */,
 				A6BC39BE1E87109300990A9D /* Hash.swift in Sources */,
 				A639BFF01F1C345500AC299F /* QuestionFinder.swift in Sources */,
 				A6D8EB921E85BA8900272F8D /* Feedback.xcdatamodeld in Sources */,
@@ -513,6 +520,7 @@
 				A68786751F1AF82A009A5EAA /* ShopperFinder.swift in Sources */,
 				A68786731F1AF780009A5EAA /* ShopFinder.swift in Sources */,
 				A68786711F1AE071009A5EAA /* ReviewFinder.swift in Sources */,
+				A639BFF61F1C532700AC299F /* ReviewsTableViewCell.swift in Sources */,
 				A687866F1F1AD986009A5EAA /* API.swift in Sources */,
 				A6D8EB8A1E85BA8900272F8D /* AppDelegate.swift in Sources */,
 			);
